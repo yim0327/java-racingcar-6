@@ -9,4 +9,15 @@ public class RacingCar {
         this.moveCount = 0;
     }
 
+    public void move() {
+        moveCount++;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMoveCount() {
+        return moveCount;
+    }
 }
