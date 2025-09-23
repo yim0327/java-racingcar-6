@@ -1,10 +1,7 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.domain.CarRegistrar;
-import racingcar.domain.GameRecord;
-import racingcar.domain.RacingCar;
-import racingcar.domain.RacingGame;
+import racingcar.domain.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +10,7 @@ public class Application {
     public static void main(String[] args) {
         CarRegistrar carRegistrar = new CarRegistrar();
         RacingGame racingGame = new RacingGame();
+        Referee referee = new Referee();
 
         List<RacingCar> carList = new ArrayList<>();
 
@@ -37,5 +35,7 @@ public class Application {
             System.out.println();
         }
 
+        ResultView result = referee.judge(carList);
+        System.out.println(result);
     }
 }
