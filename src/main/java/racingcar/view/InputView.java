@@ -13,6 +13,8 @@ public class InputView {
     public static int inputTryCount() {
         System.out.println("시도할 회수는 몇회인가요?");
         int tryCount = Integer.parseInt(Console.readLine());
+        if (tryCount <= 0)
+            throw new IllegalArgumentException("시도 횟수는 1 이상이어야 합니다.");
         return tryCount;
     }
 }
