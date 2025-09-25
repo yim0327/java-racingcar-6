@@ -11,13 +11,7 @@ public class OutputView {
         System.out.println(printBar);
     }
 
-    public static void printWinners(List<RacingCar> winners) {
-        String result = "최종 우승자 :";
-
-        for (RacingCar car : winners) {
-            result += " " + car.getName() + "," ;
-        }
-
-        System.out.println(result + "\b");
+    public static void printWinners(List<String> winners) {
+        System.out.println("최종 우승자 : " + String.join(", ", winners));
     }
 }

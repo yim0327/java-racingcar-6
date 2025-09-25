@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Referee {
 
-    public List<RacingCar> judge(List<RacingCar> carList) {
+    public List<String> judge(List<RacingCar> carList) {
         int topRank = 0;
 
        for (RacingCar car : carList)
            if (topRank < car.getMoveCount()) { topRank = car.getMoveCount(); }
 
-        List<RacingCar> winners = new ArrayList<>();
+        List<String> winners = new ArrayList<>();
 
         for (RacingCar car : carList)
-            if (topRank == car.getMoveCount()) { winners.add(car); }
+            if (topRank == car.getMoveCount()) { winners.add(car.getName()); }
 
         return winners;
     }
