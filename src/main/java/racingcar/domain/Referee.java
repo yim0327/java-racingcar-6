@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Referee {
 
-    public ResultView judge(List<RacingCar> carList) {
+    public List<RacingCar> judge(List<RacingCar> carList) {
         int topRank = 0;
 
        for (RacingCar car : carList)
@@ -16,6 +16,6 @@ public class Referee {
         for (RacingCar car : carList)
             if (topRank == car.getMoveCount()) { winners.add(car); }
 
-        return new ResultView(winners);
+        return winners;
     }
 }

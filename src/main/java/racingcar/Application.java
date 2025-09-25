@@ -28,12 +28,11 @@ public class Application {
         for (int i = 0; i < tryCount; i++) {
             for (RacingCar car : carList) {
                 racingGame.playTurn(car);
-                OutputView.printGameRecord(new GameRecord(car));
+                OutputView.printGameRecord(car);
             }
             System.out.println();
         }
 
-        ResultView result = referee.judge(carList);
-        OutputView.printWinners(result);
+        OutputView.printWinners(referee.judge(carList));
     }
 }

@@ -1,15 +1,23 @@
 package racingcar.view;
 
-import racingcar.domain.GameRecord;
-import racingcar.domain.ResultView;
+import racingcar.domain.RacingCar;
+
+import java.util.List;
 
 public class OutputView {
 
-    public static void printGameRecord(GameRecord gameRecord) {
-        System.out.println(gameRecord);
+    public static void printGameRecord(RacingCar car) {
+        String printBar = car.getName() + " : " + "-".repeat(car.getMoveCount());
+        System.out.println(printBar);
     }
 
-    public static void printWinners(ResultView result) {
-        System.out.println(result);
+    public static void printWinners(List<RacingCar> winners) {
+        String result = "최종 우승자 :";
+
+        for (RacingCar car : winners) {
+            result += " " + car.getName() + "," ;
+        }
+
+        System.out.println(result + "\b");
     }
 }
