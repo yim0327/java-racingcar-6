@@ -1,4 +1,6 @@
-package racingcar.domain;
+package racingcar.domain.factory;
+
+import racingcar.domain.car.RacingCar;
 
 public class CarRegistrar {
     private static final int MAX_NAME_LENGTH = 5;

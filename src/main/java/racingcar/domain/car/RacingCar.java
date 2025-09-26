@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.car;
 
 public class RacingCar {
     private final String name;

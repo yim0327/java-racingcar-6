@@ -1,6 +1,10 @@
 package racingcar;
 
-import racingcar.domain.*;
+import racingcar.domain.factory.CarRegistrar;
+import racingcar.domain.car.RacingCar;
+import racingcar.domain.game.GameEngine;
+import racingcar.domain.game.Referee;
+import racingcar.domain.game.generator.RandomNumberGenerator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -10,7 +14,8 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         CarRegistrar carRegistrar = new CarRegistrar();
-        RacingGame racingGame = new RacingGame();
+        RandomNumberGenerator generator = new RandomNumberGenerator();
+        GameEngine gameEngine = new GameEngine(generator);
         Referee referee = new Referee();
 
         List<RacingCar> carList = new ArrayList<>();
@@ -27,7 +32,7 @@ public class Application {
         System.out.println("\n실행 결과");
         for (int i = 0; i < tryCount; i++) {
             for (RacingCar car : carList) {
-                racingGame.playTurn(car);
+                gameEngine.playTurn(car);
                 OutputView.printGameRecord(car);
             }
             System.out.println();
