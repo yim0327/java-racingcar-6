@@ -4,6 +4,7 @@ import racingcar.domain.factory.CarRegistrar;
 import racingcar.domain.car.RacingCar;
 import racingcar.domain.game.GameEngine;
 import racingcar.domain.game.Referee;
+import racingcar.domain.game.generator.NumberGenerator;
 import racingcar.domain.game.generator.RandomNumberGenerator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
@@ -14,7 +15,7 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         CarRegistrar carRegistrar = new CarRegistrar();
-        RandomNumberGenerator generator = new RandomNumberGenerator();
+        NumberGenerator generator = new RandomNumberGenerator();
         GameEngine gameEngine = new GameEngine(generator);
         Referee referee = new Referee();
 
